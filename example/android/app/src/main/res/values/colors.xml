@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="khenshin_primary">#ca0814</color> <!-- Color de la barra de navegación y botón principal-->
-    <color name="khenshin_primary_dark">#580409</color> <!-- Color del status bar superior -->
-    <color name="khenshin_primary_text">#ffffff</color> <!-- Color del texto en la barra de navegación -->
-    <color name="khenshin_accent">#ca0814</color> <!-- Color de las decoraciones, por ejemplo barras de progreso -->
+    <color name="khenshin_primary">#e5be01</color> <!-- Color de la barra de navegación y botón principal-->
+    <color name="khenshin_primary_dark">#e5be01</color> <!-- Color del status bar superior -->
+    <color name="khenshin_primary_text">#000000</color> <!-- Color del texto en la barra de navegación -->
+    <color name="khenshin_accent">#e5be01</color> <!-- Color de las decoraciones, por ejemplo barras de progreso -->
 </resources>

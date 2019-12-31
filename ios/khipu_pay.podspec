@@ -4,17 +4,18 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'khipu_pay'
-  s.version          = '0.0.1'
-  s.summary          = 'Plugin to process payments through the Khipu platform.'
+  s.version          = '0.0.2'
+  s.summary          = 'Plugin to create payment identifiers, process payments and verify the status of a payment through the Khipu platform.'
   s.description      = <<-DESC
-Plugin to process payments through the Khipu platform.
+Plugin to create payment identifiers, process payments and verify the status of a payment through the Khipu platform.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/DuckyTieDev/khipu_pay'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'DuckyTie' => 'juan.vergara@duckytie.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
+  s.dependency 'khenshin'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.

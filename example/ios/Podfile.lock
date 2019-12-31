@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - khipu_pay (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - khipu_pay (from `.symlinks/plugins/khipu_pay/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  khipu_pay:
+    :path: ".symlinks/plugins/khipu_pay/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  khipu_pay: b58e322d873aa27866ae1c293fb5274b43f15d65
+
+PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
+
+COCOAPODS: 1.8.3

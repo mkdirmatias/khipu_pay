@@ -4,7 +4,10 @@ import 'package:khipu_pay/khipu_pay.dart';
 import 'package:khipu_pay/khipu_payment_status.dart';
 import 'package:khipu_pay/khipu_payment.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+  KhipuPay.initialize(hexaColor: "");
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -38,12 +41,12 @@ class _MyAppState extends State<MyApp> {
                 ),
                 onPressed: () async {
                   String idPayment = await KhipuPayment().getPaymentId(
-                    id: "id_cobrador", //Information delivered by khipu
-                    secret: "secret", //Information delivered by khipu
+                    id: "234079", //Information delivered by khipu
+                    secret:
+                        "ec756ffc2b61bf299e87e5611a6ddccbd59147c9", //Information delivered by khipu
                     subject: "asunto del pago",
                     amount: "1000",
                     currency: "CLP",
-                    email: "juan.vergara@duckytie.com",
                   );
 
                   print('El id de pago es: $idPayment');
@@ -75,8 +78,9 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () async {
                   String statusPayment = await KhipuPaymentStatus().status(
                     transactionCode: paymentId,
-                    id: "id_cobrador", //Information delivered by khipu
-                    secret: "secret", //Information delivered by khipu
+                    id: "234079", //Information delivered by khipu
+                    secret:
+                        "ec756ffc2b61bf299e87e5611a6ddccbd59147c9", //Information delivered by khipu
                   );
 
                   print('El status del pago es: $statusPayment');

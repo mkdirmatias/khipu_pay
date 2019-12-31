@@ -27,6 +27,25 @@ class also extends from FlutterApplication
 
 In iOS you should not make any special settings.
 
+## Add Color in colors.xml
+
+```xml
+<color name="khenshin_primary">#ca0814</color> <!-- Navigation bar color and main button -->
+<color name="khenshin_primary_dark">#580409</color> <!-- Color of the top status bar -->
+<color name="khenshin_primary_text">#ffffff</color> <!-- Text color in the navigation bar -->
+<color name="khenshin_accent">#ca0814</color> <!-- Color of the decorations, for example progress bars -->
+```
+
+On iOS, the color of Khipu is set in the initialize method
+
+```dart
+void main() {
+  runApp(MyApp());
+  KhipuPay.initialize(hexaColor: "e5be01");
+}
+```
+
+
 ## How to use the plugin
 
 1. To generate a payment identifier, you must submit the fields required by Khipu,

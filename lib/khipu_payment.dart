@@ -68,9 +68,9 @@ class KhipuPayment {
       print("paymentId: " + responseMap["payment_id"]);
       return responseMap["payment_id"];
     } else {
-      final Map parsed = json.decode(response.body);
-      print(parsed);
-      return "";
+      final Map responseMap = json.decode(response.body);
+      print(responseMap);
+      return responseMap["message"];
     }
   }
 
@@ -97,7 +97,7 @@ class KhipuPayment {
     var amountInt = int.parse(amount);
     if (amount != null && amount.isEmpty) {
       throw ArgumentError.value(amount, 'amount cannot be empty or null');
-    } else if (amountInt is int && amountInt > 0) {
+    } else if (amountInt is int && amountInt <= 0) {
       throw ArgumentError.value(
           amount, 'amount must be an int and greater than 0');
     }
