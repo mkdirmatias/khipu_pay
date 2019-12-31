@@ -15,8 +15,7 @@ dependencies:
 
 ```
 
-2. Install it
-You can install packages from the command line:
+2. Install it You can install packages from the command line:
 
 with Flutter:
 
@@ -26,22 +25,19 @@ $ flutter pub get
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
 
-3. Import it
-To create the payment identifier, amount:
+3. To create the payment identifier, amount:
 
 ```dart
 import 'package:khipu_pay/khipu_payment.dart';
 ```
 
-4. Import it
-To process the payment, amount:
+4. To process the payment, amount:
 
 ```dart
 import 'package:khipu_pay/khipu_pay.dart';
 ```
 
-5. Import it
-To validate the payment status, amount:
+5. To validate the payment status, amount:
 
 ```dart
 import 'package:khipu_pay/khipu_payment_status.dart';
