@@ -11,6 +11,19 @@ class KhipuPaymentStatus {
     @required String id,
     @required String secret,
   }) async {
+    if (transactionCode != null && transactionCode.isEmpty) {
+      throw ArgumentError.value(
+          transactionCode, 'transactionCode cannot be empty or null');
+    }
+
+    if (id != null && id.isEmpty) {
+      throw ArgumentError.value(id, 'id cannot be empty or null');
+    }
+
+    if (secret != null && secret.isEmpty) {
+      throw ArgumentError.value(secret, 'secret cannot be empty or null');
+    }
+
     String method = "GET";
     String url = "https://khipu.com/api/2.0/payments/" + transactionCode;
 

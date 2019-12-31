@@ -1,3 +1,9 @@
+## 0.0.2
+
+* More description in example project
+* Now it works on Android and iOS
+* Validation of mandatory fields
+
 ## 0.0.1
 
 * Payment ID generators

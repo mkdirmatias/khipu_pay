@@ -1,16 +1,47 @@
-# khipu_pay_example
+# KhipuPay Example
 
 Demonstrates how to use the khipu_pay plugin.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. To generate a payment identifier, you must submit the fields required by Khipu,
+the email field is not mandatory.
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+import 'package:khipu_pay/khipu_payment.dart';
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+String idPayment = await KhipuPayment().getPaymentId(
+    id: "id_cobrador", //Information delivered by khipu
+    secret: "secret", //Information delivered by khipu
+    subject: "asunto del pago",
+    amount: "1000", //This value must be greater than 0
+    currency: "CLP",
+    email: "correo@correo.cl",
+);
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Once the payment identifier is generated, you can process the payment by Khipu, it will
+return a "SUCCESS" if the transaction was correct or a "FAILURE" if the transaction fails
+or is canceled.
+
+```dart
+import 'package:khipu_pay/khipu_pay.dart';
+
+String statusProcess = await KhipuPay.paymentProcess(paymentId: idPayment);
+```
+
+3. Before or after making the payment, you can check the status of the generator identifier.
+
+```dart
+import 'package:khipu_pay/khipu_payment_status.dart';
+
+String statusPayment = await KhipuPaymentStatus().status(
+    transactionCode: idPayment,
+    id: "id_cobrador", //Information delivered by khipu
+    secret: "secret", //Information delivered by khipu
+);
+```
+
+Remember that Khipu provides id and secret for development and production environment, you must
+change these fields, depending on the environment in which your application is located, so that
+you can process your payments correctly.
