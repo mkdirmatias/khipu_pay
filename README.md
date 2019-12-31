@@ -25,7 +25,15 @@ to
 This change will not change the normal functionality of your application, since the KhipuApplication
 class also extends from FlutterApplication
 
-In iOS you should not make any special settings.
+## Podfile changes
+
+Remove use_frameworks! of Podfile, to avoid conflicts with Khipu bookstore
+
+```
+target 'Runner' do
+  use_frameworks!
+```
+
 
 ## Add Color in colors.xml
 
