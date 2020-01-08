@@ -49,13 +49,7 @@ class MethodCallHandlerImpl(private var activity: Activity, messenger: BinaryMes
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
         if(requestCode == START_PAYMENT_REQUEST_CODE && data != null) {
-            //handleResult(resultCode)
-
-            if(resultCode == Activity.RESULT_OK){
-                Toast.makeText(activity, "PAYMENT OK", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(activity, "PAYMENT FAILED", Toast.LENGTH_LONG).show()
-            }
+            handleResult(resultCode)
         }else{
             return false
         }

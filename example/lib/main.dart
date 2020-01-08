@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String paymentId = "";
+  String paymentStatus = "-";
 
   @override
   void initState() {
@@ -75,15 +76,19 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
-                  String statusPayment = await KhipuPaymentStatus().status(
+                  paymentStatus = await KhipuPaymentStatus().status(
                     transactionCode: paymentId,
                     id: "id_cobrador", //Information delivered by khipu
                     secret: "secret", //Information delivered by khipu
                   );
 
-                  print('El status del pago es: $statusPayment');
+                  setState(() {});
+
+                  print('El status del pago es: $paymentStatus');
                 },
               ),
+              SizedBox(height: 30.0),
+              Text("El estado del pago es: $paymentStatus"),
             ],
           ),
         ),
