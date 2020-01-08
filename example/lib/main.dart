@@ -41,9 +41,8 @@ class _MyAppState extends State<MyApp> {
                 ),
                 onPressed: () async {
                   String idPayment = await KhipuPayment().getPaymentId(
-                    id: "234079", //Information delivered by khipu
-                    secret:
-                        "ec756ffc2b61bf299e87e5611a6ddccbd59147c9", //Information delivered by khipu
+                    id: "id_consumer", //Information delivered by khipu
+                    secret: "secret", //Information delivered by khipu
                     subject: "asunto del pago",
                     amount: "1000",
                     currency: "CLP",
@@ -78,9 +77,8 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () async {
                   String statusPayment = await KhipuPaymentStatus().status(
                     transactionCode: paymentId,
-                    id: "234079", //Information delivered by khipu
-                    secret:
-                        "ec756ffc2b61bf299e87e5611a6ddccbd59147c9", //Information delivered by khipu
+                    id: "id_consumer", //Information delivered by khipu
+                    secret: "secret", //Information delivered by khipu
                   );
 
                   print('El status del pago es: $statusPayment');
