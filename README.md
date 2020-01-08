@@ -53,6 +53,8 @@ void main() {
 }
 ```
 
+*IMPORTANT: The hexadecimal color to configure in iOS, is still in development.
+
 
 ## How to use the plugin
 
