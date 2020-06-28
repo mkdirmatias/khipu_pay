@@ -2,7 +2,6 @@ package com.duckytie.khipupay
 
 import android.app.Activity
 import android.content.Intent
-import android.widget.Toast
 import androidx.annotation.VisibleForTesting
 import com.browser2app.khenshin.KhenshinApplication
 import com.browser2app.khenshin.KhenshinConstants
@@ -14,7 +13,8 @@ import io.flutter.plugin.common.PluginRegistry
 class MethodCallHandlerImpl(private var activity: Activity, messenger: BinaryMessenger):
         MethodChannel.MethodCallHandler, PluginRegistry.ActivityResultListener {
     companion object {
-        @VisibleForTesting private const val START_PAYMENT_REQUEST_CODE = 1001
+        @VisibleForTesting
+        private const val START_PAYMENT_REQUEST_CODE = 1001
     }
 
     private var pendingResult: MethodChannel.Result? = null
@@ -28,10 +28,10 @@ class MethodCallHandlerImpl(private var activity: Activity, messenger: BinaryMes
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         val paymentId: String? = call.argument<String>("paymentId")
-        
+
         pendingResult = result
         methodCall = call
-        
+
         if(call.method == "paymentProcess"){
             val intent: Intent = (activity.application as KhenshinApplication).khenshin.startTaskIntent
             intent.putExtra(KhenshinConstants.EXTRA_PAYMENT_ID, paymentId)

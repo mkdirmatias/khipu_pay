@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -7,12 +8,14 @@ class KhipuPay {
   static const MethodChannel _channel = MethodChannel('khipu_pay');
 
   static initialize({String hexaColor}) async {
-    await _channel.invokeMethod(
-      'initialize',
-      <String, dynamic>{
-        'hexaColor': hexaColor,
-      },
-    );
+    if (Platform.isIOS) {
+      await _channel.invokeMethod(
+        'initialize',
+        <String, dynamic>{
+          'hexaColor': hexaColor,
+        },
+      );
+    }
   }
 
   /// Returns a [String] object that indicates the status of the payment

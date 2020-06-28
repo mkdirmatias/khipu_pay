@@ -1,3 +1,9 @@
+## 1.0.0
+
+* Version changed from khenshin to 7.1.2
+* Specific version of khenshin 1.702 added to iOS
+* Now available, the hexadecimal option for color in iOS
+
 ## 0.0.2
 
 * More description in example project

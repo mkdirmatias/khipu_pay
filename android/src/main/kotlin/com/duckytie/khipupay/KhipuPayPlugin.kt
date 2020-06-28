@@ -1,8 +1,8 @@
 package com.duckytie.khipupay
 
 import android.app.Activity
-import android.os.Build
-import androidx.annotation.NonNull
+import androidx.annotation.NonNull;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -43,7 +43,7 @@ class KhipuPayPlugin: FlutterPlugin, ActivityAware {
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
     this.binding = binding
-    maybeStartListening(binding.activity, flutterPluginBinding!!.flutterEngine.dartExecutor)
+    maybeStartListening(binding.activity, flutterPluginBinding!!.binaryMessenger)
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
@@ -59,8 +59,6 @@ class KhipuPayPlugin: FlutterPlugin, ActivityAware {
 
   // Initialize MethodCallHandler
   private fun maybeStartListening(activity: Activity, messenger: BinaryMessenger){
-    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return
-
     methodCallHandler = MethodCallHandlerImpl(activity, messenger)
 
     if(registrar != null){
