@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Identifier and secret deleted in the sample project
+
 ## 1.0.0
 
 * Version changed from khenshin to 7.1.2
