@@ -1,13 +1,17 @@
 name: khipu_pay
 description: Plugin to create payment identifiers, process payments and verify the
   status of a payment through the Khipu platform.
-version: 0.0.3
+version: 1.0.0
 homepage: https://github.com/DuckyTieDev/khipu_pay
 
 flutter:
   plugin:
-    androidPackage: com.duckytie.khipupay
-    pluginClass: KhipuPayPlugin
+    platforms:
+      android:
+        package: com.duckytie.khipupay
+        pluginClass: KhipuPayPlugin
+      ios:
+        pluginClass: KhipuPayPlugin
 
 dependencies:
   flutter:
@@ -23,4 +27,5 @@ dev_dependencies:
     sdk: flutter
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.10.0"
