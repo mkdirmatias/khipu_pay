@@ -7,7 +7,11 @@ import 'package:khipu_pay/khipu_payment.dart';
 
 void main() {
   runApp(MyApp());
-  KhipuPay.initialize(hexaColor: "#7F7094");
+  KhipuPay.initialize(
+    hexaColor: "#489FDA",
+    ocultarBarra: true,
+    colorTexto: "#fffff"
+  );
 }
 
 class MyApp extends StatefulWidget {

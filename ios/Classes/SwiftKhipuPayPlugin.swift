@@ -13,13 +13,38 @@ public class SwiftKhipuPayPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
             case "initialize":
-                let myArguments = call.arguments as? [String : String]
-                let hexaColor = myArguments?["hexaColor"] ?? "#000000"
-                let color = UIColor(hexString: hexaColor)
+
+                // Variables a cambiar
+                var ocultarBarra : Bool = true;
+                var colorString : String = "#000000";
+                var colorTextoString : String = "#ffffff";
+                
+                let myArguments = call.arguments as? Dictionary<String, Any>
+                
+                if let hexaColor = myArguments?["hexaColor"] as? String
+                {
+                    colorString = hexaColor
+                }
+
+                if let barraValor = myArguments?["ocultarBarra"] as? Bool
+                {
+                    ocultarBarra = barraValor
+                }
+
+                if let textoColor = myArguments?["colorTexto"] as? String
+                {
+                    colorTextoString = textoColor
+                }
+
+                // Transformar colores
+                let color = UIColor(hexString: colorString)
+                let colorTexto = UIColor(hexString: colorTextoString)
               
                 KhenshinInterface.initWithBuilderBlock {(builder: KhenshinBuilder?) -> Void in
                     builder?.apiUrl = "https://khipu.com/app/enc/"
-                    builder?.mainButtonStyle = Int(KHMainButtonDefault.rawValue)
+                    builder?.mainButtonStyle = Int(KHMainButtonFatOnForm.rawValue)
+                    builder?.hideWebAddressInformationInForm = ocultarBarra
+                    builder?.navigationBarTextTint = colorTexto
                     builder?.principalColor = color
                 }
                 break;

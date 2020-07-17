@@ -46,8 +46,17 @@ On iOS, the color of Khipu is set in the initialize method
 ```dart
 void main() {
   runApp(MyApp());
-  KhipuPay.initialize(hexaColor: "#e5be01");
+  KhipuPay.initialize(
+    hexaColor: "#489FDA",
+     ocultarBarra: true,
+     colorTexto: "#ffff"
+   );
 }
+```
+Forzar el tema claro en iOS, el darkmode transforma las letras en blanco y no se ven
+```
+<key>UIUserInterfaceStyle</key>
+<string>Light</string>
 ```
 
 *IMPORTANT: If you do not provide a hexadecimal color or it is wrong, the default color is black.
@@ -55,6 +64,10 @@ void main() {
 ## Additional Settings
 
 In your project, you may need to add the [Android Multidex]. Apparently this is a requirement for khenshin 7.1.2.
+
+## Personalizar
+- https://github.com/khipu/browser2app-demo-android
+- https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-swift.md
 
 ## How to use the plugin
 

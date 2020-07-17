@@ -7,12 +7,14 @@ import 'package:flutter/services.dart';
 class KhipuPay {
   static const MethodChannel _channel = MethodChannel('khipu_pay');
 
-  static initialize({String hexaColor}) async {
+  static initialize({String hexaColor, bool ocultarBarra, String colorTexto}) async {
     if (Platform.isIOS) {
       await _channel.invokeMethod(
         'initialize',
         <String, dynamic>{
           'hexaColor': hexaColor,
+          'ocultarBarra': ocultarBarra,
+          'colorTexto': colorTexto
         },
       );
     }
